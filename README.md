@@ -12,7 +12,7 @@ jQuery('textarea').onDelay('input', function() {
 }, 1000);
 ```
 
-## jQuery.onDelay(events, [selector][, data], handler, delay)
+## jQuery.onDelay(events[, selector][, data], handler, delay)
 
 ### events
 Type: String
