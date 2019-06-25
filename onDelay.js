@@ -4,12 +4,14 @@
 			fn = selector;
 			delay = data;
 			data = selector = undefined;
-		} else if (delay == null) {
+		}
+		else if (delay == null) {
 			if (typeof selector === 'string') { // (types, selector, fn, delay)
 				delay = fn;
 				fn = data;
 				data = undefined;
-			} else { // (types, data, fn, delay)
+			}
+			else { // (types, data, fn, delay)
 				delay = fn;
 				fn = data;
 				data = selector;
@@ -18,15 +20,6 @@
 		}
 
 		return $.fn.on.call(this, types, selector, data, function() {
-			var self = $(this);
-			self.siblings('.auto-saved').prop('hidden', true);
-			self.siblings('.auto-saving').prop('hidden', false);
-
-			arguments[0].done = function(ok) {
-				self.siblings('.auto-saved').prop('hidden', !ok);
-				self.siblings('.auto-saving').prop('hidden', true);
-			};
-
 			if (delay > 0) {
 				if (this.onDelayTimerId) {
 					clearTimeout(this.onDelayTimerId);
