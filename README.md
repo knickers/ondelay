@@ -2,8 +2,6 @@
 
 Delay `jQuery.on()` call for a specified elapsed time after the original event. Additionally, if another event is triggered before the delay has completed, then the callback is postponed for another delay duration.
 
-The function definition mimics that of `jQuery.on()` with the addition of a delay value as the last argument.
-
 Useful for auto-saving text boxes as a user types, the event will only be passed through after the user stops typing for a certain period.
 
 ```javascript
@@ -11,6 +9,8 @@ jQuery('textarea').onDelay('input', function() {
 	console.log('Saved:', this.value);
 }, 1000);
 ```
+
+The function definition mimics that of `jQuery.on()` with the addition of a delay value as the last argument.
 
 ## jQuery.onDelay(events[, selector][, data], handler, delay)
 
